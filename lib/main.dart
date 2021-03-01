@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 void main() {
   runApp(MyApp());
@@ -47,7 +48,18 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () async {
+          String barcodeScanResult = await FlutterBarcodeScanner.scanBarcode(
+            '#FF0000',
+            'Cancel',
+            false,
+            ScanMode.DEFAULT,
+          );
+
+          setState(() {
+            _result = barcodeScanResult;
+          });
+        },
         child: Icon(Icons.qr_code_scanner),
       ),
     );
