@@ -9,18 +9,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Nextflow Flutter Barcode Scanner',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Nextflow Flutter Barcode Scanner'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, this.title = 'Nextflow'}) : super(key: key);
 
   final String title;
 
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _result = barcodeScanResult;
           });
         },
-        child: Icon(Icons.qr_code_scanner),
+        child: const Icon(Icons.qr_code_scanner),
       ),
     );
   }
